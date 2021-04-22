@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { timeStamp } from 'console';
 
 @Component({
   selector: 'app-equipment',
@@ -22,10 +23,19 @@ export class EquipmentComponent implements OnInit {
    maximumAllowedMass: number = 2000;
    maxItems: number = 10;
 
+   isFull: boolean = false;
    constructor() { }
 
    ngOnInit() { }
 
    // Code your addItem function here:
-   
+   addItem(item:object):boolean{
+      this.cargoHold.push(item);
+      this.cargoMass += item["mass"];
+      return (200 >= (this.maximumAllowedMass - this.cargoMass));
+   }
+   emptyHold(){
+     this.cargoHold = [];
+     this.cargoMass = 0;
+   }
 }

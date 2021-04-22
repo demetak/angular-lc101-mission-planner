@@ -7,12 +7,29 @@ button {
     margin: 2px;
     cursor: pointer;
 }
-
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 h3 {
     text-align: center;
 }
 
-/* Add an 'active' class to style the background of the 'Add to Cargo Hold' buttons. */
+.nearMaxMass{
+    color:red;
+    font:italic, bold;
+}
 
+/* Add an 'active' class to style the background of the 'Add to Cargo Hold' buttons. */
+.active{
+    background-color:yellow;
+}
 
 /* Add the 'nearMaxMass' class style here: */
+.nearMaxMass{
+    color:red;
+    font:italic;
+    font-weight: bold;
+}
